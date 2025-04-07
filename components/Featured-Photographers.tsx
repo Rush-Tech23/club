@@ -7,6 +7,7 @@ import { TextAnimate } from "./magicui/text-animate";
 // import { useTheme } from "@/app/theme-provider";
 import { BorderBeam } from "./magicui/border-beam";
 import * as framerMotion from "framer-motion";
+import { useRouter } from "next/navigation";
 const { motion } = framerMotion;
 
 const featuredPhotographers = [
@@ -82,6 +83,7 @@ const FeaturedPhotographers = () => {
   // const theme = useTheme();
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [viewType, setViewType] = useState<'grid' | 'magazine' | 'minimal'>('grid');
+ const router = useRouter();
 
   // Function to render stars based on rating
   const renderStars = (rating: number) => {
@@ -110,6 +112,10 @@ const FeaturedPhotographers = () => {
     }
     
     return stars;
+  };
+
+  const handleClick = () => {
+    router.push("/photographers");
   };
 
   const renderGridCards = () => (
@@ -181,6 +187,7 @@ const FeaturedPhotographers = () => {
 
             {/* View Profile Button */}
             <motion.button
+             onClick={handleClick}
               className="mt-4 w-full py-2 px-4 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-lg flex items-center justify-center gap-2 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

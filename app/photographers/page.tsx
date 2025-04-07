@@ -2,9 +2,11 @@
 
 
 import ContactCard from "@/components/photographer/Contact-card";
+import Packages from "@/components/photographer/packages";
 import PhotographerProfile from "@/components/photographer/PhotographerProfile";
 // import Tags from "@/components/photographer/Photographers- Tags";
 import PortfolioGallery from "@/components/photographer/PortfolioGallery";
+import RecentShoots from "@/components/photographer/recentshoots";
 
 const PhotographerPage = () => {
   // You can fetch data dynamically here using params or server-side functions
@@ -28,7 +30,7 @@ const PhotographerPage = () => {
   };
   const portfolioItems = [
     {
-      src: "/download.jpeg",
+      src: "/download (1).jpeg",
       title: "Sunset Wedding",
       description: "Beautiful golden hour wedding photography at the beach",
       category: "Wedding",
@@ -66,6 +68,8 @@ const PhotographerPage = () => {
       <PhotographerProfile {...photographer} />
       {/* <Tags tags={photographer.tags} /> */}
       <PortfolioGallery images={portfolioItems} />
+      <RecentShoots />
+      <Packages /> 
       <ContactCard contact={photographer.contact} />
     </div>
   );
