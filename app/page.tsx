@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
     <Hero/>
-    <Tags/>
+    <Tags />
     <FeaturedPhotographers/>
     <TopLocations/>
     <LatestPhotoShoots/>
