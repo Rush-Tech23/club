@@ -20,7 +20,7 @@ interface AboutBioProps {
 
 const AboutBio = ({ bio }: AboutBioProps) => {
   return (
-    <section className="px-4 py-14 md:px-16 bg-gray-100 dark:bg-gray-900 rounded-3xl shadow-inner">
+    <section className="px-4 py-10 md:px-16 bg-gray-100 dark:bg-gray-900 rounded-3xl ">
       <motion.div
         variants={containerVariants}
         initial="hidden"

@@ -1,109 +1,114 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { FaCamera, FaHeart, FaRegComment, FaRegBookmark } from "react-icons/fa";
-import { IoMdPhotos } from "react-icons/io";
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useState } from 'react';
 
-type PortfolioItem = {
+type GalleryImage = {
   src: string;
-  title: string;
-  description: string;
-  category: string;
-  likes: number;
-  comments: number;
+  alt: string;
+  colSpan?: number;
+  rowSpan?: number;
 };
 
-type Props = {
-  images: PortfolioItem[];
-};
+const images: GalleryImage[] = [
+  { src: '/katrina.jpg', alt: 'Wedding Moment', colSpan: 2, rowSpan: 2 },
+  { src: '/cat.jpg', alt: 'Portrait in Nature' },
+  { src: '/urban.jpg', alt: 'Urban Style' },
+  { src: '/golden.jpg', alt: 'Golden Hour', colSpan: 2 },
+  { src: '/bg.jpg', alt: 'Black & White' },
+  { src: '/candid.jpg', alt: 'Candid Smile', rowSpan: 2 },
+  { src: '/model.jpg', alt: 'Fashion Shoot' },
+  { src: '/studio-portrait.jpg', alt: 'Studio Portrait' },
+  { src: '/gallery3.jpg', alt: 'Sunset Vibes', colSpan: 2 },
+  { src: '/street.jpg', alt: 'Street Moments' },
+  // { src: '/extra5.jpg', alt: 'Smiling Bride', colSpan: 2, rowSpan: 2 },
+];
 
-const PortfolioGallery = ({ images }: Props) => {
+const PhotoGallery = () => {
+  const [selected, setSelected] = useState<GalleryImage | null>(null);
+
   return (
-    <div className="max-w-[1200px] mx-auto px-4 py-8">
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-white flex items-center gap-2">
-            <IoMdPhotos className="text-blue-500" />
-            <span>Portfolio Showcase</span>
-          </h2>
-          <p className="text-gray-600 dark:text-gray-300 mt-2">
-            Capturing moments that tell your story
-          </p>
-        </div>
-        <div className="flex gap-2">
-          <button className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm font-medium transition-all">
-            All Work
-          </button>
-          <button className="px-4 py-2 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all">
-            Categories
-          </button>
-        </div>
-      </div>
+    <section className=" dark:bg-gray-900 py-16 px-4">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto"
+      >
+        <h2 className="text-3xl md:text-4xl text-center font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+           Portfolio Gallery
+        </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {images.map((item, i) => (
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]"
+          style={{ gridAutoFlow: 'dense' }}
+        >
+          {images.map((image, idx) => {
+            const colSpan = image.colSpan ?? 1;
+            const rowSpan = image.rowSpan ?? 1;
+
+            return (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.02 }}
+                className="relative group overflow-hidden rounded-2xl shadow-md cursor-pointer"
+                style={{
+                  gridColumn: `span ${colSpan}`,
+                  gridRow: `span ${rowSpan}`,
+                }}
+                onClick={() => setSelected(image)}
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105 rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <p className="text-white font-medium text-lg">{image.alt}</p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </motion.div>
+
+      {/* Modal View */}
+      {selected && (
+        <motion.div
+          className="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          onClick={() => setSelected(null)}
+        >
           <motion.div
-            key={i}
-            className="group relative overflow-hidden rounded-xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.02 }}
+            className="bg-white dark:bg-gray-800 rounded-2xl p-4 max-w-3xl w-full relative"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative h-64 overflow-hidden">
-              <Image
-                src={item.src}
-                alt={item.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <div className="text-white">
-                  <h3 className="font-bold text-lg">{item.title}</h3>
-                  <p className="text-sm line-clamp-2">{item.description}</p>
-                </div>
-              </div>
-              <div className="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium">
-                {item.category}
-              </div>
-            </div>
-
-            <div className="p-4">
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex items-center gap-1 text-gray-500 dark:text-gray-400">
-                  <FaCamera className="text-blue-400" />
-                  <span className="text-xs">Photo Shoot</span>
-                </div>
-                <div className="flex gap-3">
-                  <div className="flex items-center gap-1 text-sm">
-                    <FaHeart className="text-red-500" />
-                    <span>{item.likes}</span>
-                  </div>
-                  <div className="flex items-center gap-1 text-sm">
-                    <FaRegComment className="text-blue-500" />
-                    <span>{item.comments}</span>
-                  </div>
-                </div>
-              </div>
-              <button className="w-full mt-2 py-2 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2">
-                <FaRegBookmark />
-                View Details
-              </button>
-            </div>
+            <Image
+              src={selected.src}
+              alt={selected.alt}
+              width={1000}
+              height={700}
+              className="rounded-xl w-full object-cover"
+            />
+            <p className="text-center text-gray-800 dark:text-white mt-4 text-lg font-semibold">
+              {selected.alt}
+            </p>
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-4 right-4 text-white bg-red-500 hover:bg-red-600 px-3 py-1.5 rounded-full text-sm"
+            >
+              ✕ Close
+            </button>
           </motion.div>
-        ))}
-      </div>
-
-      <div className="mt-12 text-center">
-        <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all flex items-center gap-2 mx-auto">
-          <IoMdPhotos />
-          Load More Work
-        </button>
-      </div>
-    </div>
+        </motion.div>
+      )}
+    </section>
   );
 };
 
-export default PortfolioGallery;
+export default PhotoGallery;
