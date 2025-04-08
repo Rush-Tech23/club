@@ -1,12 +1,16 @@
 
 
 
+import AboutBio from "@/components/photographer/about";
+// import AvailabilityCalendar from "@/components/photographer/AvailabilityCalendar";
+import ClientReviews from "@/components/photographer/ClientReviews";
 import ContactCard from "@/components/photographer/Contact-card";
 import Packages from "@/components/photographer/packages";
 import PhotographerProfile from "@/components/photographer/PhotographerProfile";
 // import Tags from "@/components/photographer/Photographers- Tags";
 import PortfolioGallery from "@/components/photographer/PortfolioGallery";
 import RecentShoots from "@/components/photographer/recentshoots";
+import ServicesOffered from "@/components/photographer/ServicesOffered";
 
 const PhotographerPage = () => {
   // You can fetch data dynamically here using params or server-side functions
@@ -38,7 +42,7 @@ const PhotographerPage = () => {
       comments: 18
     },
     {
-      src:"/model.jpg",
+      src: "/model.jpg",
       title: "Fashion Shoot",
       description: "High-fashion editorial shoot in the city",
       category: "Fashion",
@@ -62,15 +66,24 @@ const PhotographerPage = () => {
       comments: 25
     },
   ]
+  const Bio = "Hi! I’m Rahul, a passionate wedding and lifestyle photographer with over 8 years of experience capturing unforgettable moments. I blend creativity with storytelling to deliver timeless images you'll cherish forever."
 
   return (
     <div className="px-4 py-10 space-y-12 mt-10 dark:bg-gray-900 bg-gray-100">
       <PhotographerProfile {...photographer} />
       {/* <Tags tags={photographer.tags} /> */}
+      <AboutBio
+        bio={Bio}
+      />
       <PortfolioGallery images={portfolioItems} />
       <RecentShoots />
-      <Packages /> 
+      <ServicesOffered />
+      <Packages />
+      <ClientReviews />
+      <div className="flex">
       <ContactCard contact={photographer.contact} />
+      {/* <AvailabilityCalendar /> */}
+      </div>
     </div>
   );
 };

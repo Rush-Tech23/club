@@ -88,7 +88,7 @@ const RecentShoots = () => {
         );
       };
   return (
-    <section className="max-w-screen-xl mx-auto px-4 space-y-6">
+    <section className="max-w-[1200px] mx-auto px-4 space-y-6">
       <div className="flex items-center gap-2 text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white">
         <Camera className="text-blue-600 dark:text-blue-400 w-7 h-7" />
         Recent Shoots

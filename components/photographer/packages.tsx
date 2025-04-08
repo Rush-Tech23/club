@@ -26,7 +26,7 @@ const packages = [
 
 const Packages = () => {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section className="py-16 px-4 max-w-[1200px] mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white">📷 Packages & Pricing</h2>
         <p className="text-gray-600 dark:text-gray-400 mt-2">Choose the plan that fits your special day</p>
