@@ -148,6 +148,7 @@ const FeaturedPhotographers = () => {
                 </div>
               </div>
               <motion.button 
+                onClick={handleClick}
                 className="bg-white text-gray-900 rounded-full p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -268,6 +269,7 @@ const FeaturedPhotographers = () => {
                 {photographer.portfolioCount} portfolio works
               </div>
               <motion.button
+                onClick={handleClick}
                 className="py-2 px-4 bg-blue-600 text-white rounded-lg flex items-center gap-2 hover:bg-blue-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -301,7 +303,9 @@ const FeaturedPhotographers = () => {
             <motion.div 
               className="absolute inset-0 bg-blue-600/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
               whileHover={{ opacity: 1 }}
+              onClick={handleClick}
             >
+              
               <ArrowRight className="w-6 h-6 text-white" />
             </motion.div>
           </div>
