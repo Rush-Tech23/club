@@ -10,6 +10,7 @@ import {
 } from 'react-icons/fa';
 import { SiBehance } from 'react-icons/si';
 import { useState } from 'react';
+import { CalendarDays } from 'lucide-react';
 
 type ContactInfo = {
   email: string;
@@ -160,9 +161,10 @@ const ContactCard = ({ contact, compact = false }: Props) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h4 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-            📅 Book a Session
-          </h4>
+          <div className="text-2xl font-bold text-gray-800 dark:text-white mb-4 flex items-center gap-2">
+            <CalendarDays className='h-5 w-5'/>
+             Book a Session
+          </div>
           <form onSubmit={handleSubmit} className="space-y-4">
             {[
               { label: 'Your Name', name: 'name', type: 'text' },
