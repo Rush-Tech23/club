@@ -39,7 +39,7 @@ const TagCard = ({ name, image }: { name: string; image: string }) => {
 
 const Tags = () => {
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 py-12 px-4">
+    <section className="bg-gray-100 dark:bg-neutral-950 py-12 px-4">
       <div className="max-w-[1200px] mx-auto w-full relative">
         <div className="text-3xl font-bold text-gray-800 dark:text-white text-center flex items-center justify-center mb-8 gap-2">
           {/* <Camera className="w-9 h-9 text-blue-600 dark:text-blue-400" /> */}
@@ -49,8 +49,8 @@ const Tags = () => {
         </div>
 
         {/* Optional: fade effect */}
-        <div className="absolute top-0 bottom-0 left-0 w-12 z-10 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-12 z-10 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-12 z-10 bg-gradient-to-r from-gray-100 dark:from-neutral-950 to-transparent pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 z-10 bg-gradient-to-l from-gray-100 dark:from-neutral-950 to-transparent pointer-events-none" />
 
         <Marquee pauseOnHover className="[--duration:20s] w-full">
           <div className="flex items-center">

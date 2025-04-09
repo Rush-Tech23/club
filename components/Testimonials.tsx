@@ -48,7 +48,7 @@ const TestimonialCard = ({
   img: string;
 }) => {
   return (
-    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 w-80 mx-3 border border-gray-200 dark:border-gray-700 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl">
+    <div className="bg-white dark:bg-neutral-900 shadow-lg rounded-xl p-6 w-80 mx-3 border border-gray-200 dark:border-gray-700 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl">
       <Image
         src={img}
         alt={name}
@@ -76,7 +76,7 @@ const TestimonialCard = ({
 
 const Testimonials = () => {
   return (
-    <div className="relative w-full py-12 bg-gray-100 dark:bg-gray-900 px-4">
+    <div className="relative w-full py-12 bg-gray-100 dark:bg-neutral-950 px-4">
       <div className="max-w-[1200px] mx-auto relative">
         <div className="text-3xl font-bold text-gray-800 dark:text-white text-center mb-8">
           <TextAnimate animation="blurIn" as="h1">
@@ -85,8 +85,8 @@ const Testimonials = () => {
         </div>
 
         {/* Fade effect */}
-        <div className="absolute top-0 bottom-0 left-0 w-12 z-10 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-12 z-10 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-12 z-10 bg-gradient-to-r from-gray-100 dark:from-neutral-950 to-transparent pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-12 z-10 bg-gradient-to-l from-gray-100 dark:from-neutral-950 to-transparent pointer-events-none" />
 
         <Marquee pauseOnHover className="w-full">
           <div className="flex items-center gap-6 px-4">

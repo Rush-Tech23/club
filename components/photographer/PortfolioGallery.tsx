@@ -29,7 +29,7 @@ const PhotoGallery = () => {
   const [selected, setSelected] = useState<GalleryImage | null>(null);
 
   return (
-    <section className=" dark:bg-gray-900 py-16 px-4">
+    <section className=" bg-gray-100 dark:bg-neutral-950 py-16 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}

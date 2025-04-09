@@ -28,7 +28,7 @@ const PhotographerProfile = ({
   projectsCompleted = 120,
 }: Props) => {
   return (
-    <section className="relative w-full bg-gradient-to-b from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16 md:py-24 px-4">
+    <section className="relative w-full bg-gradient-to-b from-blue-50 via-white to-purple-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 py-16 md:py-24 px-4 pt-20">
       <div className="max-w-[1200px] mx-auto flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Text Info */}
         <motion.div

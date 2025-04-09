@@ -69,7 +69,7 @@ const PhotographerPage = () => {
   const Bio = "Hi! I’m Rahul, a passionate wedding and lifestyle photographer with over 8 years of experience capturing unforgettable moments. I blend creativity with storytelling to deliver timeless images you'll cherish forever."
 
   return (
-    <div className="px-4 py-10 space-y-12 mt-10 dark:bg-gray-900 bg-gray-100">
+  <>
       <PhotographerProfile {...photographer} />
       {/* <Tags tags={photographer.tags} /> */}
       <AboutBio
@@ -80,11 +80,8 @@ const PhotographerPage = () => {
       <ServicesOffered />
       <Packages />
       <ClientReviews />
-      <div className="flex">
       <ContactCard contact={photographer.contact} />
-      
-      </div>
-    </div>
+      </>
   );
 };
 

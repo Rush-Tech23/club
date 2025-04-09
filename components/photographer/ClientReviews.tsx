@@ -44,7 +44,7 @@ const ClientReviews = () => {
     reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
 
   return (
-    <section className="px-4 py-10 md:px-16 bg-muted/30 dark:bg-muted/10 rounded-3xl">
+    <section className="px-4 py-10 md:px-16 bg-gray-100 dark:bg-neutral-950 ">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -52,7 +52,7 @@ const ClientReviews = () => {
         variants={container}
         className="max-w-4xl mx-auto text-center"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+        <h2 className="text-3xl md:text-4xl text-center font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
           Ratings and Reviews from Clients
         </h2>
 
@@ -68,7 +68,7 @@ const ClientReviews = () => {
             <motion.div
               key={index}
               variants={item}
-              className="bg-white dark:bg-gray-800 p-5 rounded-xl shadow-md"
+              className="bg-white dark:bg-neutral-900 p-5 rounded-xl shadow-md"
             >
               <div className="flex items-center gap-2 mb-2">
                 <StarRating rating={review.rating} />

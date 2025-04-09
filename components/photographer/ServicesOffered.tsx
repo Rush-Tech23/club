@@ -31,7 +31,7 @@ const itemVariants = {
 
 const ServicesOffered = () => {
   return (
-    <section className="px-4 py-14 md:px-16 bg-gray-50 dark:bg-gray-900">
+    <section className="px-4 py-14 md:px-16 bg-gray-100 dark:bg-neutral-950">
       <motion.div
         initial="hidden"
         whileInView="show"
@@ -45,7 +45,7 @@ const ServicesOffered = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          📸 Services Offered
+           Services Offered
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -54,7 +54,7 @@ const ServicesOffered = () => {
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
-              className="flex items-center gap-3 bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-all rounded-2xl p-5"
+              className="flex items-center gap-3 bg-white dark:bg-neutral-900 shadow-md hover:shadow-lg transition-all rounded-2xl p-5"
             >
               <CheckCircle className="text-green-600 dark:text-green-400" size={26} />
               <span className="text-lg font-medium text-gray-800 dark:text-gray-100">

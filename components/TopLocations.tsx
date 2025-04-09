@@ -13,7 +13,7 @@ const cities = [
 
 export default function TopLocations() {
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 py-12">
+    <section className="bg-gray-100 dark:bg-neutral-950 py-12">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-3xl font-bold text-center flex items-center justify-center gap-2 text-gray-800 dark:text-white">
         <MapPin className="w-8 h-8 text-blue-600 dark:text-blue-400 pt-1" />

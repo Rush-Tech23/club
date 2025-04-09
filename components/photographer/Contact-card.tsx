@@ -108,9 +108,9 @@ const ContactCard = ({ contact, compact = false }: Props) => {
   ];
 
   return (
-    <section className="w-full px-4 py-10 md:px-8 bg-muted/30 dark:bg-muted/10">
+    <section className="w-full px-4 py-10 md:px-8 bg-gray-100 dark:bg-neutral-950">
       <motion.div
-        className="w-full max-w-5xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 md:p-10 border border-gray-100 dark:border-gray-700 grid grid-cols-1 md:grid-cols-2 gap-10"
+        className="w-full max-w-5xl mx-auto bg-white dark:bg-neutral-900 rounded-2xl shadow-xl p-6 md:p-10 border border-gray-100 dark:border-gray-700 grid grid-cols-1 md:grid-cols-2 gap-10"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -136,7 +136,7 @@ const ContactCard = ({ contact, compact = false }: Props) => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
               >
-                <div className={`text-2xl p-2 bg-gray-100 dark:bg-gray-700 rounded-full ${item.color}`}>
+                <div className={`text-2xl p-2 bg-gray-100 dark:bg-neutral-700 rounded-full ${item.color}`}>
                   {item.icon}
                 </div>
                 <div>
@@ -186,7 +186,7 @@ const ContactCard = ({ contact, compact = false }: Props) => {
                   value={form[field.name as keyof typeof form]}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-neutral-800 text-gray-800 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
                 />
               </motion.div>
             ))}

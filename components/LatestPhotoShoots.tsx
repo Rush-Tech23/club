@@ -28,7 +28,7 @@ export default function LatestPhotoShoots() {
   }, []);
 
   return (
-    <section className="relative bg-gray-100 dark:bg-gray-900 py-16 px-6">
+    <section className="relative bg-gray-100 dark:bg-neutral-950 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <div className="text-4xl font-bold text-gray-800 dark:text-white flex items-center justify-center gap-3">
           {/* <Camera className="w-10 h-10 text-blue-600 dark:text-blue-400 px-1" /> */}
