@@ -1,13 +1,23 @@
+"use client";
+import { useTheme } from "@/app/theme-provider";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { Particles } from "./magicui/particles";
 
 export default function Footer() {
+  const { theme } = useTheme();
+  const [color, setColor] = useState("#ffffff");
+
+  useEffect(() => {
+    setColor(theme === "dark" ? "#ffffff" : "#000000");
+  }, [theme]);
   return (
     <footer className="bg-white dark:bg-neutral-900 text-neutral-800 dark:text-gray-200">
       {/* Main Footer Content */}
@@ -79,6 +89,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={100}
+        ease={80}
+        color={color}
+        refresh
+      />
 
       {/* Call to Action + Copyright */}
       <div className="text-center ">
