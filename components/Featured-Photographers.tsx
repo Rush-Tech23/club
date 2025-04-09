@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Briefcase, Camera, MapPin, Star, ArrowRight, Heart } from "lucide-react";
+import { Briefcase, MapPin, Star, ArrowRight, Heart } from "lucide-react";
 import { TextAnimate } from "./magicui/text-animate";
 // import { useTheme } from "@/app/theme-provider";
 import { BorderBeam } from "./magicui/border-beam";
@@ -329,7 +329,7 @@ const FeaturedPhotographers = () => {
         {/* Title with View Switcher */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex items-center gap-2 mb-4 md:mb-0 text-3xl font-bold text-gray-800 dark:text-white">
-            <Camera className="w-9 h-9 text-blue-600 dark:text-blue-400 px-1" />
+            {/* <Camera className="w-9 h-9 text-blue-600 dark:text-blue-400 px-1" /> */}
             <TextAnimate animation="blurIn" as="h1">
               Featured Photographers
             </TextAnimate>

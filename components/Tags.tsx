@@ -1,6 +1,6 @@
 import Marquee from "react-fast-marquee";
 import { TextAnimate } from "./magicui/text-animate";
-import { Camera } from "lucide-react";
+// import { Camera } from "lucide-react";
 import Image from "next/image";
 
 const categories = [
@@ -42,7 +42,7 @@ const Tags = () => {
     <section className="bg-gray-100 dark:bg-gray-900 py-12 px-4">
       <div className="max-w-[1200px] mx-auto w-full relative">
         <div className="text-3xl font-bold text-gray-800 dark:text-white text-center flex items-center justify-center mb-8 gap-2">
-          <Camera className="w-9 h-9 text-blue-600 dark:text-blue-400" />
+          {/* <Camera className="w-9 h-9 text-blue-600 dark:text-blue-400" /> */}
           <TextAnimate animation="blurIn" as="h1">
             Photography Categories
           </TextAnimate>

@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { AnimatedGridPattern } from "./magicui/animated-grid-pattern";
-import { BackgroundLines } from "./ui/background-lines";
+// import { BackgroundLines } from "./ui/background-lines";
 import { Lexend } from 'next/font/google';
 import { Search, Camera, MapPin } from "lucide-react";
 import Image from "next/image";
@@ -11,9 +11,9 @@ const lexend = Lexend({ subsets: ['latin'], weight: ['300', '400', '500', '600']
 
 export default function Hero() {
   return (
-    <BackgroundLines>
+
       <section
-        className={`relative w-full h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 ${lexend.className}`}
+        className={`relative w-full min-h-screen py-12 md:py-0  flex items-center justify-center overflow-hidden bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-950 ${lexend.className}`}
       >
         {/* Animated Grid Background */}
         <AnimatedGridPattern
@@ -82,7 +82,7 @@ export default function Hero() {
             </button>
           </div>
         </div>
-              
+            
               {/* Search Tags */}
               <div className="flex flex-wrap gap-2 mt-3">
                 <span className="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">Wedding</span>
@@ -103,16 +103,10 @@ export default function Hero() {
                 fill
                 className="object-cover"
               />
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 p-6 text-white">
-                <p className="text-sm font-medium">Featured Artist</p>
-                <h3 className="text-xl font-bold">Sarah Johnson</h3>
-                <p className="text-sm opacity-80">Portrait Specialist</p>
-              </div> */}
             </div>
           </div>
         </div>
+        <div className="absolute bottom-0 w-full h-8 bg-transparent" />
       </section>
-    </BackgroundLines>
   );
 }

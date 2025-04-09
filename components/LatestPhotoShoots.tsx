@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Camera, X } from "lucide-react";
+import {X } from "lucide-react";
 import { TextAnimate } from "./magicui/text-animate";
 
 const photoShoots = [
@@ -31,7 +31,7 @@ export default function LatestPhotoShoots() {
     <section className="relative bg-gray-100 dark:bg-gray-900 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
         <div className="text-4xl font-bold text-gray-800 dark:text-white flex items-center justify-center gap-3">
-          <Camera className="w-10 h-10 text-blue-600 dark:text-blue-400 px-1" />
+          {/* <Camera className="w-10 h-10 text-blue-600 dark:text-blue-400 px-1" /> */}
           <TextAnimate animation="blurIn" as="h1">
           Latest Photo Shoots
           </TextAnimate>
